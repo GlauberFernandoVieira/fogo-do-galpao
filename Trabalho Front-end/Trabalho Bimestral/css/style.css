@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ead7c4;
+    color: #111;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid #ff9900;
+    outline-offset: 3px;
+}
+
+.topo {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("../img/fogo-galpao.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-color: #111;
+    height: 870px;
+    overflow: hidden;
+}
+
+.barra-carrossel {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    width: 0%;
+    background-color: #a00000;
+    animation: carregarBarra 5s linear infinite;
+}
+
+@keyframes carregarBarra {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.menu {
+    background: #111;
+    border-bottom: 4px solid #8b0000;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    padding: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ff9900;
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 5px;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.apresentacao {
+    text-align: center;
+}
+
+.titulo {
+    text-align: center;
+    color: #8b0000;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.apresentacao h2 {
+    color: #111;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.texto {
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.8;
+    margin: 0 auto 40px;
+    max-width: 850px;
+}
+
+.caixas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    width: 30%;
+    min-width: 250px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border-top: 5px solid #8b0000;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.card h3 {
+    color: #8b0000;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 17px;
+}
+
+.cardapio {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.cardapio h2 {
+    color: #8b0000;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.itens-cardapio {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.itens-cardapio article {
+    background: #fff;
+    width: 280px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-bottom: 5px solid #8b0000;
+}
+
+.itens-cardapio img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+}
+
+.itens-cardapio h3 {
+    color: #8b0000;
+    margin-bottom: 10px;
+}
+
+.itens-cardapio p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.itens-cardapio strong {
+    display: block;
+    font-weight: bold;
+    color: #111;
+    font-size: 20px;
+}
+
+.botao {
+    display: block;
+    width: 260px;
+    margin: 40px auto;
+    text-align: center;
+    background: #8b0000;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+}
+
+.botao:hover {
+    background: #b30000;
+}
+
+#informacao {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservas {
+    text-align: center;
+    margin: 60px auto 40px;
+    padding: 35px 20px;
+    background: white;
+    border-radius: 12px;
+    max-width: 650px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    border-top: 5px solid #8b0000;
+}
+
+.reservas h2 {
+    color: #8b0000;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.reservas p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.form-reserva {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.form-reserva label {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-reserva input,
+.form-reserva textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-reserva textarea {
+    resize: none;
+    height: 80px;
+}
+
+.rodape {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.rodape h2 {
+    margin-bottom: 15px;
+}
+
+.rodape button {
+    background: #8b0000;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.rodape button:hover {
+    background: #b30000;
+}
+
+#infoContato {
+    margin: 15px 0;
+    font-size: 18px;
+    color: white;
+}
+
+#infoContato a {
+    color: #ff9900;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#infoContato a:hover {
+    color: #ffcc66;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .topo {
+        height: 420px;
+        background-position: center;
+    }
+
+    .menu li {
+        padding: 14px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .titulo {
+        font-size: 32px;
+    }
+
+    .apresentacao h2,
+    .cardapio h2,
+    .reservas h2 {
+        font-size: 28px;
+    }
+
+    .texto {
+        font-size: 18px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .botao {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 35px 15px;
+    }
+
+    .topo {
+        height: 320px;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu li {
+        padding: 10px;
+    }
+
+    .titulo {
+        font-size: 28px;
+    }
+
+    .texto {
+        font-size: 16px;
+    }
+
+    .itens-cardapio article {
+        width: 100%;
+    }
+
+    .reservas {
+        padding: 25px 15px;
+    }
+}
